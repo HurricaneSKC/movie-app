@@ -1,8 +1,6 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import './styles.scss'
+import React from "react";
+import ReactDOM from "react-dom";
 
-const element = <h1>Hello World</h1>
+import App from "./App";
 
-console.log(element);
-ReactDOM.render(element, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById("root"));
