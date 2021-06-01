@@ -11,13 +11,13 @@ const App = () => {
     <>
       <Header title="netflix roulette" />
       <Button
-        className="btn-primary"
+        className="btn-primary btn-add-movies"
         onClick={() => console.log("You clicked me")}
       >
         + Movie
       </Button>
       <MovieContainer />
-      <Footer>netflix roulette</Footer>
+      <Footer className="footer">netflix roulette</Footer>
     </>
   );
 };
