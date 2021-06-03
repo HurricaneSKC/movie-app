@@ -4,13 +4,13 @@ import movies from "../../../mock-data";
 
 const MovieList = () => (
   <ul className="movie-list">
-    {movies.data.map((movie) => (
+    {movies.data.map(({ id, title, release_date, poster_path, genres }) => (
       <MovieCard
-        key={movie.id}
-        title={movie.title}
-        release_date={movie.release_date}
-        poster_path={movie.poster_path}
-        genres={movie.genres}
+        key={id}
+        title={title}
+        release_date={release_date}
+        poster_path={poster_path}
+        genres={genres}
       />
     ))}
   </ul>
