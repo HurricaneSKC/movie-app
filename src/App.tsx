@@ -1,10 +1,11 @@
 import React from "react";
-import "./styles.scss";
+import "./styles/styles.scss";
 
 import Header from "./components/Header/Header";
 import Button from "./components/Buttons/Button";
 import Footer from "./components/Footer/Footer";
 import MovieContainer from "./components/MoviesContainer/MovieContainer";
+import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 
 import Modal from "./components/Modal/Modal";
 import useModal from "./components/Modal/useModal";
@@ -18,7 +19,9 @@ const App = () => {
         + Movie
       </Button>
       <Modal isShowing={isShowing} hide={toggle} />
-      <MovieContainer />
+      <ErrorBoundary>
+        <MovieContainer />
+      </ErrorBoundary>
       <Footer className="footer">netflix roulette</Footer>
     </>
   );
