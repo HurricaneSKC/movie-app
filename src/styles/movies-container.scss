@@ -1,17 +1,22 @@
-.genre-list {
-  list-style-type: none;
-  overflow: hidden;
-  background-color: #333333;
-
-  li {
-    padding: 10px;
-  }
+.filter-bar {
+  display: flex;
+  justify-content: space-between;
+  background: $secondary-background;
 }
 
 li {
   float: left;
   text-align: center;
   text-decoration: none;
+}
+
+.genre-list {
+  list-style-type: none;
+  overflow: hidden;
+
+  li {
+    padding: 10px;
+  }
 }
 
 .movie-list {
