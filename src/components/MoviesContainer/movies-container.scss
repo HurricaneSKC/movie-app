@@ -27,6 +27,7 @@ li {
   li {
     flex: auto;
     padding: 20px 0;
+    position: relative;
   }
 
   img {
@@ -61,5 +62,49 @@ li {
     max-height: 40px;
     margin: 10px;
     background: $primary;
+  }
+}
+
+.three-dots {
+  position: absolute;
+  background: $secondary-background;
+  width: 30px;
+  height: 30px;
+  color: white;
+  border-radius: 50%;
+  margin: 30px;
+  right: 10px;
+
+  &::after {
+    content: "\2022 \2022 \2022";
+    position: absolute;
+    top: 50%;
+    left: 51%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    font-size: 14px;
+  }
+}
+
+.movie-card-dropdown {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  top: 50px;
+  right: 40px;
+  background: $secondary-background;
+
+  li {
+    padding: 0;
+  }
+
+  button {
+    background: transparent;
+    width: 100px;
+    border: none;
+    margin: 0;
+
+    &:hover {
+      background: $primary;
+    }
   }
 }

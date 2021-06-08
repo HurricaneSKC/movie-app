@@ -7,20 +7,16 @@ import Footer from "./components/Footer/Footer";
 import MovieContainer from "./components/MoviesContainer/MovieContainer";
 import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 
-// import AddMovieForm from "./components/Forms/AddMovieForm";
+import AddMovieForm from "./components/Forms/AddMovieForm";
 // import EditMovieForm from "./components/Forms/EditMovieForm"
-import DeleteMovieForm from "./components/Forms/DeleteMovieForm";
+// import DeleteMovieForm from "./components/Forms/DeleteMovieForm";
 
 import Modal from "./components/Modal/Modal";
 import useModal from "./components/Modal/useModal";
 
-const messages = {
-  deleteMessage: "Are you sure you want to delete this movie?",
-};
-
 const App = () => {
   const { isShowing, toggle } = useModal();
-  const movieForm = <DeleteMovieForm message={messages.deleteMessage} />;
+  const movieForm = <AddMovieForm />;
   console.log(movieForm);
   return (
     <>
