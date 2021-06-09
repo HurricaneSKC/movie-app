@@ -1,5 +1,5 @@
 import React from "react";
-import MovieCard from "./MovieCard";
+import MovieCard from "../MovieCard/MovieCard";
 import movies from "../../../mock-data";
 
 const MovieList = () => (
