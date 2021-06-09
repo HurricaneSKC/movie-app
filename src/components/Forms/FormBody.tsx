@@ -1,20 +1,22 @@
 import React from "react";
-import { useState } from "react";
+import useForm from "./useForm";
 
 const FormBody = () => {
-  const [title, setTitle] = useState("");
-  const [releaseDate, setReleaseDate] = useState("");
-  const [movieURL, setMovieURL] = useState("");
-  const [genre, setGenre] = useState("");
-  const [overview, setOverview] = useState("");
-  const [runtime, setRuntime] = useState("");
+  const [values, handleChange] = useForm({
+    title: "",
+    releaseDate: "",
+    movieURL: "",
+    genre: "",
+    overview: "",
+    runtime: "",
+  });
 
   return (
     <form className="form-body">
       <label htmlFor="title">title</label>
       <input
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
+        value={values.title}
+        onChange={handleChange}
         placeholder="Title"
         type="text"
         name="title"
@@ -22,36 +24,37 @@ const FormBody = () => {
       />
       <label htmlFor="release-date">release date</label>
       <input
-        value={releaseDate}
-        onChange={(e) => setReleaseDate(e.target.value)}
+        value={values.releaseDate}
+        onChange={handleChange}
         placeholder="Release Date"
         type="date"
-        name="release-date"
+        name="releaseDate"
         id="release-date"
       />
       <label htmlFor="movie-url">movie URL</label>
       <input
-        value={movieURL}
-        onChange={(e) => setMovieURL(e.target.value)}
+        value={values.movieURL}
+        onChange={handleChange}
         placeholder="Movie URL here"
         type="url"
-        name="movie-url"
+        name="movieURL"
         id="movie-url"
       />
       <label htmlFor="genre">Genre</label>
       <select
-        value={genre}
-        onChange={(e) => setGenre(e.target.value)}
+        value={values.genre}
+        onChange={handleChange}
         placeholder="Select Genre"
         name="genre"
         id="genre"
       >
         {/* get genre data */}
+        <option value="horror">horror</option>
       </select>
       <label htmlFor="overview">Overview</label>
       <input
-        value={overview}
-        onChange={(e) => setOverview(e.target.value)}
+        value={values.overview}
+        onChange={handleChange}
         placeholder="Overview here"
         type="text"
         name="overview"
@@ -59,13 +62,14 @@ const FormBody = () => {
       />
       <label htmlFor="runtime">Runtime</label>
       <input
-        value={runtime}
-        onChange={(e) => setRuntime(e.target.value)}
+        value={values.runtime}
+        onChange={handleChange}
         placeholder="Runtime here"
-        type="number"
+        type="text"
         name="runtime"
         id="runtime"
       />
+      {console.log(values)}
       <button className="btn-secondary" type="reset">
         RESET
       </button>
