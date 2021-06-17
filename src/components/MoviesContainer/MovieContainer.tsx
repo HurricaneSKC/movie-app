@@ -5,11 +5,11 @@ import MovieList from "./MovieList/MovieList";
 import MovieSearch from "./MovieSearchContainer/MovieSearch";
 
 const sortDropdown = {
-  sortName: "movie-sort",
+  dropdownName: "movie-sort",
   sortLabel: "Sort by",
-  sortFilters: ["release date", "genre", "rating"],
-  selectClass: "",
+  optionsList: ["release date", "genre", "rating"],
   labelClass: "",
+  selectClass: "",
 };
 
 const MovieContainer = () => (
@@ -17,13 +17,7 @@ const MovieContainer = () => (
     <MovieSearch />
     <div className="filter-bar">
       <GenericList />
-      <Dropdown
-        sortLabel={sortDropdown.sortLabel}
-        dropdownName={sortDropdown.sortName}
-        optionsList={sortDropdown.sortFilters}
-        selectClass={sortDropdown.selectClass}
-        labelClass={sortDropdown.labelClass}
-      />
+      <Dropdown {...sortDropdown} />
     </div>
     <MovieList />
   </main>

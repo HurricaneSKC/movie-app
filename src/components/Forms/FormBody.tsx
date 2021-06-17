@@ -36,6 +36,7 @@ const FormBody = () => {
       movie.runtime = runtimeRef.current.value;
 
     return movie;
+    // POST to API
   };
 
   const titleRef = useRef<HTMLInputElement>(null);

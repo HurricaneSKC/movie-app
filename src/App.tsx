@@ -17,7 +17,6 @@ import useModal from "./components/Modal/useModal";
 const App = () => {
   const { isShowing, toggle } = useModal();
   const movieForm = <AddMovieForm />;
-  console.log(movieForm);
   return (
     <>
       <Header title="netflix roulette" />
@@ -38,5 +37,3 @@ const App = () => {
 };
 
 export default App;
-
-// button that switches on the modal needs to pass some data to determine which for should show
