@@ -9,6 +9,8 @@ const movieSearchObject = {
   searchMovie: () => console.log("Search DB"),
 };
 
+// add in useCallbacks for search and button
+
 const MovieSearch = () => (
   <div className="search-container">
     <SearchInput
