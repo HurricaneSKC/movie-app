@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "./styles/styles.scss";
 
 import Header from "./components/Header/Header";
@@ -23,18 +24,16 @@ const App = () => {
   const [movieList, updateMovieList] = useState([]);
 
   useEffect(() => {
-    fetch(getMovieURL)
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          setIsLoaded(true);
-          updateMovieList(result.data);
-        },
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
-        }
-      );
+    axios.get(getMovieURL).then(
+      (result) => {
+        setIsLoaded(true);
+        updateMovieList(result.data.data);
+      },
+      (error) => {
+        setIsLoaded(true);
+        setError(error);
+      }
+    );
   }, []);
 
   console.log(error);
