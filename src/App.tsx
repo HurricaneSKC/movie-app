@@ -37,13 +37,12 @@ const App = () => {
       );
   }, []);
 
+  console.log(error);
+  console.log(isLoaded);
+  console.log(movieList);
+
   return (
     <>
-      <p>
-        {console.log(error)}
-        {console.log(isLoaded)}
-        {console.log(movieList)}
-      </p>
       <Header title={siteContent.siteTitle} />
       <Button className="btn-primary btn-add-movies" onClick={toggle}>
         + Movie
