@@ -4,19 +4,12 @@ const Button = ({
   onClick,
   children,
   className,
-  movie,
 }: {
   onClick: () => void;
   children?: React.ReactNode;
   className?: string;
-  movie?: string;
 }) => (
-  <button
-    type="button"
-    className={className}
-    onClick={onClick}
-    data-movie={movie}
-  >
+  <button type="button" className={className} onClick={onClick}>
     {children}
   </button>
 );

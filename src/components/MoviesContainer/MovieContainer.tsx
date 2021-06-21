@@ -12,15 +12,16 @@ const sortDropdown = {
   selectClass: "",
 };
 
-const MovieContainer = () => (
-  <main>
-    <MovieSearch />
-    <div className="filter-bar">
-      <GenericList />
-      <Dropdown {...sortDropdown} />
-    </div>
-    <MovieList />
-  </main>
-);
-
+const MovieContainer = () => {
+  return (
+    <main>
+      <MovieSearch />
+      <div className="filter-bar">
+        <GenericList />
+        <Dropdown {...sortDropdown} />
+      </div>
+      <MovieList />
+    </main>
+  );
+};
 export default MovieContainer;
