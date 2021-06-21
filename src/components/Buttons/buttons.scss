@@ -1,0 +1,33 @@
+button {
+  color: $text;
+  padding: 14px 20px;
+  margin: 8px;
+  border: solid $primary 1px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: $primary;
+
+  &:hover {
+    background: $background;
+    color: $primary;
+  }
+}
+
+.btn-secondary {
+  background: $background;
+  color: $primary;
+
+  &:hover {
+    background: $primary;
+    color: $text;
+  }
+}
+
+.btn-add-movies {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+}
