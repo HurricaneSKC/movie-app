@@ -7,10 +7,3 @@ test("main heading renders the correct title", () => {
   const { getByTitle } = render(<App />);
   getByTitle("netflix roulette");
 });
-
-// test("main header is netflix roulette", () => {
-//   render(<App></App>);
-//   const mainHeaderTitle = document.querySelector("h1");
-//   console.log(mainHeaderTitle);
-//   expect(mainHeaderTitle).toBe("netflix roulette");
-// });
