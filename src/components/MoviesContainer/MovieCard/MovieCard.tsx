@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import EditMovieIcon from "./EditMovieIcon";
 import EditMovieList from "./EditMovieList";
 
@@ -14,12 +14,17 @@ const MovieCard = ({
   genres: string[];
 }) => {
   const [showEditMovieList, setShowEditMovieList] = useState(false);
-  const onClick = () => setShowEditMovieList(true);
-  const offClick = () => setShowEditMovieList(false);
+
+  const editMovieClick = useCallback(() => {
+    showEditMovieList
+      ? setShowEditMovieList(false)
+      : setShowEditMovieList(true);
+  }, [showEditMovieList, setShowEditMovieList]);
+
   return (
     <li data-genre={genres} data-release-date={release_date}>
-      <EditMovieIcon onClick={onClick} />
-      {showEditMovieList ? <EditMovieList offClick={offClick} /> : null}
+      <EditMovieIcon onClick={editMovieClick} />
+      {showEditMovieList && <EditMovieList offClick={editMovieClick} />}
       <img src={poster_path} alt={title} />
       <h3>{title}</h3>
       <p>{genres}</p>

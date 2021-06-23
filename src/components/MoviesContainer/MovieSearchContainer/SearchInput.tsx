@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const SearchInput = ({
   label,
@@ -8,11 +8,28 @@ const SearchInput = ({
   label: string;
   placeholder: string;
   filterOnChange: () => void;
-}) => (
-  <>
-    <label htmlFor="search">{label}</label>
-    <input type="text" placeholder={placeholder} onChange={filterOnChange} />
-  </>
-);
+}) => {
+  const [searchValue, setSearchValue] = useState("");
+
+  const resetSearch = () => {
+    setSearchValue("");
+  };
+
+  return (
+    <>
+      <label htmlFor="search">{label}</label>
+      <input
+        type="search"
+        name="search"
+        placeholder={placeholder}
+        onChange={filterOnChange}
+        value={searchValue}
+      />
+      <button type="button" value="" onClick={resetSearch}>
+        Reset
+      </button>
+    </>
+  );
+};
 
 export default SearchInput;
